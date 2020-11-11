@@ -19,7 +19,8 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JApplet;
 import javax.swing.JLabel;
-
+import java.io.File;
+import java.io.IOException;
 public class MediaPalace {
 
 	 /*NOTE: To play mp3 files, you will need javazoom.jar in the build path. 

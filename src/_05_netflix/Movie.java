@@ -7,11 +7,11 @@ package _05_netflix;
 
 
 public class Movie implements Comparable<Movie> {
-
 	private String title;
-	private int stars;
+	private double stars;
+	
 
-	public Movie(String title, int stars) {
+	public Movie(String title, double stars) {
 		this.title = title;
 		this.stars = stars;
 	}
@@ -20,7 +20,7 @@ public class Movie implements Comparable<Movie> {
 		return this.title;
 	}
 
-	public int getRating() {
+	public double getRating() {
 		return this.stars;
 	}
 
@@ -28,21 +28,13 @@ public class Movie implements Comparable<Movie> {
 		return "\"" + title + "\" - " + stars + " stars";
 	}
 
-public String getTicketPrice() {
-		if (this.stars > 2) {
-			return "That will be $12 please.";
-		} else if (this.title.contains("Twilight")) {
-			return "This movie is so bad, we'll pay YOU to watch it!";
-		} else {
-			return "Don't waste your money on this horrible rubbish.";
-		}
+public String getPrice() {
+		return "" + title + " is $6.99 a month on Disney+";
 	}
  
 
-	public int compareTo(Movie otherMovie) {
-		int compareQuantity = otherMovie.getRating();
-
-		// return this.stars - compareQuantity; //ascending order
-		return compareQuantity - this.stars; // descending order
+	
+	public double compareTo(Movie otherMovie) {
+		return Math.abs(otherMovie.getRating() - this.stars);
 	}
 }

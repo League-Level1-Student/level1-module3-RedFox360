@@ -12,6 +12,7 @@ import java.util.Collections;
 public class NetflixQueue {
 	
 	ArrayList<Movie> movies = new ArrayList<Movie>();
+	static ArrayList<Double> ratings = new ArrayList<Double>();
 	
 	public Movie getBestMovie(){
 		this.sortMoviesByRating();
@@ -20,6 +21,7 @@ public class NetflixQueue {
 
 	public void addMovie(Movie movie) {
 		movies.add(movie);
+		ratings.add(movie.getRating());
 	}
 	
 	public Movie getMovie(int movieNumber){
@@ -30,7 +32,7 @@ public class NetflixQueue {
 	}
 	
 	public void sortMoviesByRating() {
-		Collections.sort(movies);
+		quickSort(ratings, 0, 5);
 	}
 
 	public void printMovies() {
@@ -39,5 +41,23 @@ public class NetflixQueue {
 			System.out.println(movie);
 		}
 	}
+	void quickSort(ArrayList<Double> arr[], int low, int high){
+	    if (low < high)
+	    {
+	        /* pi is partitioning index, arr[pi] is now
+	           at right place */
+	       int  pi = partition(arr, low, high);
+
+	        quickSort(arr, low, pi - 1);  // Before pi
+	        quickSort(arr, pi + 1, high); // After pi
+	    }
+	}
+
+	private int partition(ArrayList<Double>[] arr, int low, int high) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
 
 }

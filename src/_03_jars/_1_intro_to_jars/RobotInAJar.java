@@ -1,5 +1,6 @@
 package _03_jars._1_intro_to_jars;
 
+import org.jointheleague.graphical.robot.Robot;
 
 public class RobotInAJar {
 	
@@ -57,6 +58,15 @@ public class RobotInAJar {
 	 */
 	
 	public void draw() {
+		String s = "Sameer";
+		Robot r = new Robot("batman");
+		r.setSpeed(10);
+		r.penDown();
+		for (int i = 0; i < 4; i++) {
+			r.move(250);
+			r.setRandomPenColor();
+			r.turn(90);
+		}
 		/*** Write code to make your robot draw a shape here ****/
 		
 		
