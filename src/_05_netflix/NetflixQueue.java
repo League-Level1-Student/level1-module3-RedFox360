@@ -32,7 +32,7 @@ public class NetflixQueue {
 	}
 	
 	public void sortMoviesByRating() {
-		quickSort(ratings, 0, 5);
+		new NetflixQueue().quickSort(ratings, 0, 5);
 	}
 
 	public void printMovies() {
@@ -41,19 +41,19 @@ public class NetflixQueue {
 			System.out.println(movie);
 		}
 	}
-	void quickSort(ArrayList<Double> arr[], int low, int high){
+	void quickSort(ArrayList<Double> ratings2, int low, int high){
 	    if (low < high)
 	    {
 	        /* pi is partitioning index, arr[pi] is now
 	           at right place */
-	       int  pi = partition(arr, low, high);
+	       int  pi = partition(ratings2, low, high);
 
-	        quickSort(arr, low, pi - 1);  // Before pi
-	        quickSort(arr, pi + 1, high); // After pi
+	        quickSort(ratings2, low, pi - 1);  // Before pi
+	        quickSort(ratings2, pi + 1, high); // After pi
 	    }
 	}
 
-	private int partition(ArrayList<Double>[] arr, int low, int high) {
+	private int partition(ArrayList<Double> arr, int low, int high) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
